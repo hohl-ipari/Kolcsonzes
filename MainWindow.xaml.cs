@@ -17,10 +17,11 @@ namespace Kolcsonzes
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Laptop> laptoplista = new List<Laptop>();
         public MainWindow()
         {
             InitializeComponent();
-            List<Laptop> laptoplista = LoadLaptopList();
+            laptoplista = LoadLaptopList();
             var letariSzamok = laptoplista.Select(l => l.LeltariSzam)
                 .Distinct()
                 .OrderBy(x => x);
@@ -67,6 +68,20 @@ namespace Kolcsonzes
                 Dayfee = dayfee;
                 Deposit = deposit;
             }
+        }
+
+        private void laptopok_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listOfSelectedRental = laptoplista
+                .Where(l => l.LeltariSzam == laptopok.SelectedItem.ToString())
+                .ToList();
+            kaucio.Content = listOfSelectedRental[0].Deposit.ToString();
+            napi.Content = listOfSelectedRental[0].Dayfee.ToString();
+            szin.Content = listOfSelectedRental[0].Color.ToString();
+            ram.Content = listOfSelectedRental[0].Ram.ToString();
+            model.Content = listOfSelectedRental[0].Model;
+            leltariszam.Content = listOfSelectedRental[0].LeltariSzam;
+            berlesekdarab.Content = listOfSelectedRental.Count;
         }
     }
 }

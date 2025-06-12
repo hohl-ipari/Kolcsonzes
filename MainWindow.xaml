@@ -8,33 +8,36 @@
         Title="Laptop Kölcsönzések" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="267*"/>
+            <ColumnDefinition Width="267*"/>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="112*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <Label Content="Leltári Számok"/>
-            <ListView x:Name="laptopok"  />
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,266,0">
+            <Label Content="Leltári Számok" Height="45"/>
+            <ListView x:Name="laptopok" SelectionChanged="laptopok_SelectionChanged" 
+                      VerticalAlignment="Stretch" />
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <Label Content="Laptop adatai"/>
-            <Label Content="Leltári Számok"/>
-            <Label Content="Model"/>
-            <Label Content="RAM (GB)"/>
-            <Label Content="Szín"/>
-            <Label Content="Napi bérleti díj"/>
-            <Label Content="Kaució"/>
-            <Label Content="Bérlések darabszáma"/>
+            <Label Content="Laptop adatai" Height="45"/>
+            <Label Content="Leltári Számok" Height="30"/>
+            <Label Content="Model" Height="30"/>
+            <Label Content="RAM (GB)" Height="30"/>
+            <Label Content="Szín" Height="30"/>
+            <Label Content="Napi bérleti díj" Height="30"/>
+            <Label Content="Kaució" Height="30"/>
+            <Label Content="Bérlések darabszáma" Height="30"/>
         </StackPanel>
-        <StackPanel Grid.Column="2">
-            <Label x:Name="leltariszam" />
-            <Label x:Name="model" />
-            <Label x:Name="ram" />
-            <Label x:Name="szin" />
-            <Label x:Name="napi"/>
-            <Label x:Name="kaucio" />
-            <Label x:Name="berlesekdarab"/>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="3" Margin="266,0,0,0">
+            <Label Content="" Height="45" HorizontalAlignment="Center" />
+            <Label x:Name="leltariszam" Height="30" HorizontalAlignment="Center"  />
+            <Label x:Name="model" Height="30"  HorizontalAlignment="Center" />
+            <Label x:Name="ram" Height="30" HorizontalAlignment="Center" />
+            <Label x:Name="szin" Height="30" HorizontalAlignment="Center" />
+            <Label x:Name="napi" Height="30" HorizontalAlignment="Center" />
+            <Label x:Name="kaucio" Height="30" HorizontalAlignment="Center" />
+            <Label x:Name="berlesekdarab" Height="30" HorizontalAlignment="Center" />
         </StackPanel>
     </Grid>
-    
+
 </Window>
