@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <Label Content="Leltári Számok"/>
-            
+            <ListView x:Name="laptopok"  />
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Label Content="Laptop adatai"/>
@@ -25,6 +25,15 @@
             <Label Content="Napi bérleti díj"/>
             <Label Content="Kaució"/>
             <Label Content="Bérlések darabszáma"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <Label x:Name="leltariszam" />
+            <Label x:Name="model" />
+            <Label x:Name="ram" />
+            <Label x:Name="szin" />
+            <Label x:Name="napi"/>
+            <Label x:Name="kaucio" />
+            <Label x:Name="berlesekdarab"/>
         </StackPanel>
     </Grid>
     
